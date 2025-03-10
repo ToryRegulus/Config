@@ -43,7 +43,7 @@ set clipboard=unnamed
 " 映射jk为退出
 inoremap jk <Esc>
 " 映射\f为格式化
-noremap \f <Action>(ReformatCode)
+map \f <Action>(ReformatCode)
 " 上下移动行
 nnoremap J :m+1<CR>
 nnoremap K :m-2<CR>
