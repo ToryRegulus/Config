@@ -1,0 +1,52 @@
+"      ___           ___           ___           ___
+"     /\  \         /\  \         /\  \         |\__\
+"     \:\  \       /::\  \       /::\  \        |:|  |
+"      \:\  \     /:/\:\  \     /:/\:\  \       |:|  |
+"      /::\  \   /:/  \:\  \   /::\~\:\  \      |:|__|__
+"     /:/\:\__\ /:/__/ \:\__\ /:/\:\ \:\__\     /::::\__\
+"    /:/  \/__/ \:\  \ /:/  / \/_|::\/:/  /    /:/~~/~
+"   /:/  /       \:\  /:/  /     |:|::/  /    /:/  /
+"   \/__/         \:\/:/  /      |:|\/__/     \/__/
+"                  \::/  /       |:|  |
+"                   \/__/         \|__|
+"               ----------------------------
+"               |   Tory 的 IDEA VIM 配置   |
+"               ----------------------------
+
+" ----- 基础设置 -----
+" 配置编码
+set encoding=utf-8
+" 自动缩进
+set autoindent
+" 在光标距离窗口顶部或底部一定行数时，开始滚动屏幕内容
+set scrolloff=10
+" 设置行号
+set number
+" 设置相对行号
+set relativenumber
+
+" ----- 搜索设置 -----
+" 高亮搜索
+set hlsearch
+" Esc取消高亮
+nnoremap <silent> <ESC> :noh<CR>
+" 递增搜索
+set incsearch
+" 搜索时智能匹配大小写
+set ignorecase smartcase
+
+" ----- 复制粘贴设置 -----
+" 共用系统剪贴板
+set clipboard=unnamed
+
+" ----- 快捷键映射 -----
+" 映射jk为退出
+inoremap jk <Esc>
+" 映射\f为格式化
+noremap \f <Action>(ReformatCode)
+" 上下移动行
+nnoremap J :m+1<CR>
+nnoremap K :m-2<CR>
+" 对选中的多行上下移动
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
