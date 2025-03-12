@@ -38,6 +38,8 @@ set ignorecase smartcase
 " ----- 复制粘贴设置 -----
 " 共用系统剪贴板
 set clipboard=unnamed
+" 复制粘贴高亮
+Plug 'machakann/vim-highlightedyank'
 
 " ----- 快捷键映射 -----
 " 映射jk为退出
