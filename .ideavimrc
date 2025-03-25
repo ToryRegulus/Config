@@ -14,10 +14,6 @@
 "               ----------------------------
 
 " ----- 基础设置 -----
-" 配置编码
-set encoding=utf-8
-" 自动缩进
-set autoindent
 " 在光标距离窗口顶部或底部一定行数时，开始滚动屏幕内容
 set scrolloff=10
 " 设置行号
@@ -26,29 +22,50 @@ set number
 set relativenumber
 
 " ----- 搜索设置 -----
-" 高亮搜索
-set hlsearch
-" Esc取消高亮
-nnoremap <silent> <ESC> :noh<CR>
-" 递增搜索
-set incsearch
-" 搜索时智能匹配大小写
-set ignorecase smartcase
 
 " ----- 复制粘贴设置 -----
 " 共用系统剪贴板
-set clipboard=unnamed
+set clipboard+=unnamed
 " 复制粘贴高亮
 Plug 'machakann/vim-highlightedyank'
 
 " ----- 快捷键映射 -----
+let mapleader = ' '
+" 映射leader-f为格式化
+map <leader>f <Action>(ReformatCode)
+" 映射leader-r为运行
+map <leader>r <Action>(Run)
+" ----- NORMAL -----
+" 映射leader-nh取消高亮
+nmap <leader>nh :noh<CR>
+" 映射leader-w为强制保存
+nmap <leader>w :w!<CR>
+" 映射leader-q为强制退出
+nmap <leader>q :q!<CR>
+" 映射leader-x为强制保存并退出
+nmap <leader>x :x!<CR>
+" ----- INSERT -----
 " 映射jk为退出
-inoremap jk <Esc>
-" 映射\f为格式化
-map \f <Action>(ReformatCode)
-" 上下移动行
-nnoremap J :m+1<CR>
-nnoremap K :m-2<CR>
-" 对选中的多行上下移动
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+imap jk <Esc>
+" ----- VISUAL -----
+" 对选中的行上下移动
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+
+" ----- 键位冲突处理 -----
+" Ctrl+A在所有模式下为全选
+sethandler <C-A> a:ide
+" Ctrl+Z在所有模式下为撤回
+sethandler <C-Z> a:ide
+" Ctrl+C在normal和visual and select模式下为复制，insert模式下为返回普通模式
+sethandler <C-C> n-v:ide i:vim
+" Ctrl+V在所有模式下为粘贴
+sethandler <C-V> a:ide
+" Ctrl+U在所有模式下为向上滚动半页
+sethandler <C-U> a:vim
+" Ctrl+D在所有模式下为向下滚动半页
+sethandler <C-D> a:vim
+" Ctrl+F在所有模式下为向下滚动一页
+sethandler <C-F> a:vim
+" Ctrl+B在所有模式下为向上滚动一页
+sethandler <C-B> a:vim
