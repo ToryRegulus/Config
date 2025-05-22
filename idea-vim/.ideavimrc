@@ -69,3 +69,5 @@ sethandler <C-D> a:vim
 sethandler <C-F> a:vim
 " Ctrl+B在所有模式下为向上滚动一页
 sethandler <C-B> a:vim
+" Ctrl+P在所有模式下为显示路径输入字段
+sethandler <C-P> a:ide
