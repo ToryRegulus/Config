@@ -8,11 +8,44 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "vim_mode": true,
+
+  // ----- 字体部分 -----
   "ui_font_size": 16,
+  "ui_font_family": "JetBrains Mono NL",
   "buffer_font_size": 18,
+  "buffer_font_family": "JetBrains Mono NL",
+
+  // ----- 主题颜色 -----
   "theme": {
     "mode": "system",
     "light": "One Dark",
     "dark": "One Dark"
+  },
+
+  // ----- 编辑器行为 -----
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 500
+    }
+  },
+  "use_smartcase_search": true,
+  "terminal": {
+    "copy_on_select": true
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "soft_wrap": "editor_width",
+  "vertical_scroll_margin": 6,
+  "extend_comment_on_newline": false,
+
+  // ----- 编辑器外观 -----
+  "relative_line_numbers": true,
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false
   }
 }
