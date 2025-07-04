@@ -45,7 +45,7 @@
     }
   },
   {
-    "context": "Pane",
+    "context": "Terminal || DebugPanel",
     "bindings": {
       "space `": "workspace::ToggleBottomDock"
     }
