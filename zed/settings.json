@@ -8,6 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "vim_mode": true,
+  "auto_install_extensions": {
+    "html": true,
+    "toml": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "ruff": true
+  },
 
   // ----- 字体部分 -----
   "ui_font_size": 16,
@@ -47,5 +54,20 @@
   },
   "tab_bar": {
     "show_nav_history_buttons": false
+  },
+
+  // ----- 语言支持 -----
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        }
+      ]
+    }
   }
 }

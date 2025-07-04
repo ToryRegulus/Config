@@ -1,0 +1,53 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "H": "vim::FirstNonWhitespace",
+      "L": "vim::EndOfLine",
+      "J": "editor::MoveLineDown",
+      "K": "editor::MoveLineUp",
+
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space f": "editor::Format",
+      "space r": "task::Rerun",
+      "space e": "project_panel::ToggleFocus",
+      "space t": "terminal_panel::ToggleFocus",
+      "space `": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "c": "project_panel::Copy",
+      "d": "project_panel::Delete",
+      "p": "project_panel::Paste",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "space `": "workspace::ToggleBottomDock"
+    }
+  }
+]
