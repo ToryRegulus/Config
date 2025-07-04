@@ -59,8 +59,9 @@
   // ----- 语言支持 -----
   "languages": {
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": ["pyright", "ruff"],
       "formatter": [
+        { "language_server": { "name": "ruff" } },
         {
           "code_actions": {
             "source.fixAll.ruff": true,
