@@ -21,8 +21,6 @@ set number
 " 设置相对行号
 set relativenumber
 
-" ----- 搜索设置 -----
-
 " ----- 复制粘贴设置 -----
 " 共用系统剪贴板
 set clipboard+=unnamed
@@ -35,6 +33,10 @@ let mapleader = ' '
 map <leader>f <Action>(ReformatCode)
 " 映射leader-r为运行
 map <leader>r <Action>(Run)
+" 映射alt-H为切换到左标签页
+map <A-h> :tabp<CR>
+" 映射alt-L为切换到右标签页
+map <A-l> :tabn<CR>
 " ----- NORMAL -----
 " 映射leader-nh取消高亮
 nmap <leader>nh :noh<CR>
@@ -44,6 +46,10 @@ nmap <leader>w :w!<CR>
 nmap <leader>q :q!<CR>
 " 映射leader-x为强制保存并退出
 nmap <leader>x :x!<CR>
+" 映射H为光标跳到行首
+nmap H ^
+" 映射L为光标跳到行尾
+nmap L $
 " ----- INSERT -----
 " 映射jk为退出
 imap jk <Esc>
