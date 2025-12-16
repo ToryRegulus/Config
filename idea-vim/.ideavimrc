@@ -24,39 +24,45 @@ set relativenumber
 " ----- 复制粘贴设置 -----
 " 共用系统剪贴板
 set clipboard+=unnamed
-" 复制粘贴高亮
-Plug 'machakann/vim-highlightedyank'
 
 " ----- 快捷键映射 -----
 let mapleader = ' '
 " 映射leader-f为格式化
-map <leader>f <Action>(ReformatCode)
+noremap <leader>f <Action>(ReformatCode)
 " 映射leader-r为运行
-map <leader>r <Action>(Run)
+noremap <leader>r <Action>(Run)
 " 映射alt-H为切换到左标签页
-map <A-h> :tabp<CR>
+noremap <A-h> :tabp<CR>
 " 映射alt-L为切换到右标签页
-map <A-l> :tabn<CR>
+noremap <A-l> :tabn<CR>
 " ----- NORMAL -----
 " 映射leader-nh取消高亮
-nmap <leader>nh :noh<CR>
+nnoremap <leader>nh :noh<CR>
 " 映射leader-w为强制保存
-nmap <leader>w :w!<CR>
+nnoremap <leader>w :w!<CR>
 " 映射leader-q为强制退出
-nmap <leader>q :q!<CR>
+nnoremap <leader>q :q!<CR>
 " 映射leader-x为强制保存并退出
-nmap <leader>x :x!<CR>
+nnoremap <leader>x :x!<CR>
 " 映射H为光标跳到行首
-nmap H ^
+nnoremap H ^
 " 映射L为光标跳到行尾
-nmap L $
+nnoremap L $
 " ----- INSERT -----
 " 映射jk为退出
-imap jk <Esc>
+inoremap jk <Esc>
 " ----- VISUAL -----
 " 对选中的行上下移动
-vmap J :m '>+1<CR>gv=gv
-vmap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" ----- 插件 -----
+" 高亮所复制的文本
+Plug 'machakann/vim-highlightedyank'
+" 注释插件
+Plug 'tpope/vim-commentary'
+" 文件树插件
+Plug 'preservim/nerdtree'
 
 " ----- 键位冲突处理 -----
 " Ctrl+A在所有模式下为全选
