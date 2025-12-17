@@ -27,15 +27,14 @@ set clipboard+=unnamed
 
 " ----- 快捷键映射 -----
 let mapleader = ' '
-" 映射leader-f为格式化
-noremap <leader>f <Action>(ReformatCode)
-" 映射leader-r为运行
-noremap <leader>r <Action>(Run)
-" 映射alt-H为切换到左标签页
-noremap <A-h> :tabp<CR>
-" 映射alt-L为切换到右标签页
-noremap <A-l> :tabn<CR>
+
 " ----- NORMAL -----
+" 映射leader-f为格式化
+nmap <leader>f <Action>(ReformatCode)
+" 映射leader-r为运行
+nmap <leader>r <Action>(Run)
+" 映射leader-e开启NERDTree
+nnoremap <leader>e :NERDTree<CR>
 " 映射leader-nh取消高亮
 nnoremap <leader>nh :noh<CR>
 " 映射leader-w为强制保存
@@ -44,17 +43,17 @@ nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q!<CR>
 " 映射leader-x为强制保存并退出
 nnoremap <leader>x :x!<CR>
-" 映射H为光标跳到行首
-nnoremap H ^
-" 映射L为光标跳到行尾
-nnoremap L $
+" 映射alt-H为切换到左标签页
+nnoremap <A-h> :tabp<CR>
+" 映射alt-L为切换到右标签页
+nnoremap <A-l> :tabn<CR>
+
 " ----- INSERT -----
-" 映射jk为退出
-inoremap jk <Esc>
+
 " ----- VISUAL -----
 " 对选中的行上下移动
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv
+vnoremap K :m '<-2<CR>gv
 
 " ----- 插件 -----
 " 高亮所复制的文本
@@ -67,12 +66,8 @@ Plug 'preservim/nerdtree'
 " ----- 键位冲突处理 -----
 " Ctrl+A在所有模式下为全选
 sethandler <C-A> a:ide
-" Ctrl+Z在所有模式下为撤回
-sethandler <C-Z> a:ide
-" Ctrl+C在normal和visual and select模式下为复制，insert模式下为返回普通模式
-sethandler <C-C> n-v:ide i:vim
-" Ctrl+V在所有模式下为粘贴
-sethandler <C-V> a:ide
+" Ctrl+R在所有模式下为重做
+sethandler <C-R> a:vim
 " Ctrl+U在所有模式下为向上滚动半页
 sethandler <C-U> a:vim
 " Ctrl+D在所有模式下为向下滚动半页
@@ -81,6 +76,14 @@ sethandler <C-D> a:vim
 sethandler <C-F> a:vim
 " Ctrl+B在所有模式下为向上滚动一页
 sethandler <C-B> a:vim
+" Ctrl+O在所有模式下为跳回到上一个光标位置
+sethandler <C-O> a:vim
+" Ctrl+I所有模式下为再次跳过去
+sethandler <C-I> a:vim
+" Ctrl+C在normal和visual and select模式下为复制，insert模式下为返回普通模式
+sethandler <C-C> n-v:ide i:vim
+" Ctrl+V在所有模式下为粘贴
+sethandler <C-V> a:ide
 " Shift+右箭头在所有模式下为AI补全
 sethandler <S-Right> a:ide
 " Ctrl+P在所有模式下为显示路径输入字段
