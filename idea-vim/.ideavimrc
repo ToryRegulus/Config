@@ -30,7 +30,7 @@ let mapleader = ' '
 
 " ----- NORMAL -----
 " 映射leader-f为格式化
-nmap <leader>f <Action>(ReformatCode)
+nmap <leader>f <Action>(ReformatCode) <Action>(OptimizeImports)
 " 映射leader-r为运行
 nmap <leader>r <Action>(Run)
 " 映射leader-e开启NERDTree
