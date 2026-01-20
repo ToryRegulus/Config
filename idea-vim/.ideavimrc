@@ -62,29 +62,3 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 " 文件树插件
 Plug 'preservim/nerdtree'
-
-" ----- 键位冲突处理 -----
-" Ctrl+A在所有模式下为全选
-sethandler <C-A> a:ide
-" Ctrl+R在所有模式下为重做
-sethandler <C-R> a:vim
-" Ctrl+U在所有模式下为向上滚动半页
-sethandler <C-U> a:vim
-" Ctrl+D在所有模式下为向下滚动半页
-sethandler <C-D> a:vim
-" Ctrl+F在所有模式下为向下滚动一页
-sethandler <C-F> a:vim
-" Ctrl+B在所有模式下为向上滚动一页
-sethandler <C-B> a:vim
-" Ctrl+O在所有模式下为跳回到上一个光标位置
-sethandler <C-O> a:vim
-" Ctrl+I所有模式下为再次跳过去
-sethandler <C-I> a:vim
-" Ctrl+C在normal和visual and select模式下为复制，insert模式下为返回普通模式
-sethandler <C-C> n-v:ide i:vim
-" Ctrl+V在所有模式下为粘贴
-sethandler <C-V> a:ide
-" Shift+右箭头在所有模式下为AI补全
-sethandler <S-Right> a:ide
-" Ctrl+P在所有模式下为显示路径输入字段
-sethandler <C-P> a:ide
